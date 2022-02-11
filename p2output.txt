@@ -1,1 +1,87 @@
+(gdb) b main
+Breakpoint 1 at 0x850: file p2original.c, line 34.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2original.c:34
+34    int AB = input_side();
+(gdb) s
+input_side () at p2original.c:4
+4   {
+(gdb) n
+6     printf("Enter a side of the triangle:\n");
+(gdb) n
+Enter a side of the triangle:
+7     scanf("%d", &side);
+(gdb) n
+4
+8     return side;
+(gdb) p side
+$1 = 4
+(gdb) n
+9   }
+(gdb) n
+main () at p2original.c:35
+35    int BC = input_side();
+(gdb) s
+input_side () at p2original.c:4
+4   {
+(gdb) n
+6     printf("Enter a side of the triangle:\n");
+(gdb) n
+Enter a side of the triangle:
+7     scanf("%d", &side);
+(gdb) n
+3
+8     return side;
+(gdb) p side
+$2 = 3
+(gdb) n
+9   }
+(gdb) n
+main () at p2original.c:36
+36    int CA = input_side();
+(gdb) s
+input_side () at p2original.c:4
+4   {
+(gdb) n
+6     printf("Enter a side of the triangle:\n");
+(gdb) n
+Enter a side of the triangle:
+7     scanf("%d", &side);
+(gdb) n
+5
+8     return side;
+(gdb) p side
+$3 = 5
+(gdb) n
+9   }
+(gdb) n
+main () at p2original.c:38
+38    int res = check_scalene(AB, BC, CA);
+(gdb) s
+check_scalene (a=4, b=3, c=5) at p2original.c:13
+13    if (a != b && a != c && b != c)
+(gdb) n
+15      return 1;
+(gdb) n
+18  }
+(gdb) n
+main () at p2original.c:39
+39    output(AB, BC, CA, res);
+(gdb) s
+output (a=4, b=3, c=5, isScalene=1) at p2original.c:22
+22    if(isScalene)
+(gdb) n
+24      printf("The triangle with sides %d, %d and %d is scalene\n", a, b, c);
+(gdb) n
+The triangle with sides 4, 3 and 5 is scalene
+30  }
+(gdb) n
+main () at p2original.c:41
+41    return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 159) exited normally]
 

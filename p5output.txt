@@ -1,1 +1,94 @@
+(gdb) b main
+Breakpoint 1 at 0x86d: file p5orginal.c, line 37.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p5orginal.c:37
+37    a = input();
+(gdb) s
+input () at p5orginal.c:3
+3   {
+(gdb) n
+5     printf("Enter the number\n");
+(gdb) n
+Enter the number
+6     scanf("%d",&a);
+(gdb) n
+14
+7     return a;
+(gdb) p a
+$1 = 14
+(gdb) n
+8   }
+(gdb) n
+main () at p5orginal.c:38
+38    b = input();
+(gdb) s
+input () at p5orginal.c:3
+3   {
+(gdb) n
+5     printf("Enter the number\n");
+(gdb) n
+Enter the number
+6     scanf("%d",&a);
+(gdb) n
+16
+7     return a;
+(gdb) p a
+$2 = 16
+(gdb) n
+8   }
+(gdb) n
+main () at p5orginal.c:39
+39    gcd = find_gcd(a,b);
+(gdb) s
+find_gcd (a=14, b=16) at p5orginal.c:13
+13    if(a>b){
+(gdb) n
+18    if (b%a==0)
+(gdb) n
+20    for(int i=2; i<a/2; i++)
+(gdb) n
+22      if (a%i==0 &b%i==0)
+(gdb) n
+23        gcd =i;
+(gdb) n
+20    for(int i=2; i<a/2; i++)
+(gdb) n
+22      if (a%i==0 &b%i==0)
+(gdb) n
+20    for(int i=2; i<a/2; i++)
+(gdb) n
+22      if (a%i==0 &b%i==0)
+(gdb) n
+20    for(int i=2; i<a/2; i++)
+(gdb) n
+22      if (a%i==0 &b%i==0)
+(gdb) n
+20    for(int i=2; i<a/2; i++)
+(gdb) n
+22      if (a%i==0 &b%i==0)
+(gdb) n
+20    for(int i=2; i<a/2; i++)
+(gdb) n
+26    return gcd;
+(gdb) p gcd
+$3 = 2
+(gdb) n
+27  }
+(gdb) n
+main () at p5orginal.c:40
+40    output(a,b,gcd);
+(gdb) s
+output (a=14, b=16, gcd=14) at p5orginal.c:31
+31    printf("the gcd %d and %d is %d\n",a,b,gcd);
+(gdb) n
+the gcd 14 and 16 is 2
+32  }
+(gdb) n
+main () at p5orginal.c:41
+41    return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 294) exited normally]
